@@ -1,0 +1,27 @@
+{
+  "name": "eureka/kernel-console",
+  "description": "Kernel for Eureka Framework. Define console application kernel versions",
+  "type": "library",
+  "license": "MIT",
+
+  "authors": [
+    {
+      "name": "Romain Cottard",
+      "role": "Developer"
+    }
+  ],
+
+  "autoload": {
+    "psr-4": {
+      "Eureka\\Console\\Kernel\\": "./src"
+    }
+  },
+
+  "require": {
+    "eureka/component-config": "^1.2",
+    "eureka/component-container": "2.0",
+    "eureka/component-http": "^1.2",
+    "eureka/component-routing": "^1.2"
+  }
+
+}
