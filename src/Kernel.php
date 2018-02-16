@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Eureka\Console\Kernel;
+namespace Eureka\Kernel\Console;
 
 use Eureka\Component\Config\Config;
 use Eureka\Component\Container\Container;
@@ -32,7 +32,12 @@ class Kernel
     /**
      * Kernel constructor.
      *
-     * @param string $env
+     * @param string $root Root path
+     * @param string $env Environment name
+     * @param bool $debug If is debug mode
+     * @param string $config Config directory
+     * @throws \Eureka\Component\Config\Exception\InvalidConfigException
+     * @throws \Psr\Container\NotFoundExceptionInterface
      */
     public function __construct($root, $env, $debug = false, $config = 'config')
     {
@@ -92,6 +97,7 @@ class Kernel
      *
      * @param  string $path
      * @return $this
+     * @throws \Eureka\Component\Config\Exception\InvalidConfigException
      */
     protected function initConfig($path)
     {
@@ -108,6 +114,7 @@ class Kernel
      * Load configs from packages.
      *
      * @return $this
+     * @throws \Eureka\Component\Config\Exception\InvalidConfigException
      */
     protected function initConfigPackages()
     {
@@ -132,6 +139,7 @@ class Kernel
 
     /**
      * @return $this
+     * @throws \Psr\Container\NotFoundExceptionInterface
      */
     protected function initContainer()
     {

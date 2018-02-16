@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Eureka\Console\Kernel\Application;
+namespace Eureka\Kernel\Console\Application;
 
 /**
  * Application interface
