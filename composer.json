@@ -19,7 +19,8 @@
 
   "require": {
     "eureka/component-config": "^2.0",
-    "eureka/component-container": "2.0"
+    "eureka/component-container": "^2.0",
+    "eureka/Eurekon": "^2.0"
   }
 
 }
