@@ -22,4 +22,24 @@ interface ApplicationInterface
      * @return void
      */
     public function run();
+
+    /**
+     * Code to execute before running the application
+     *
+     * @return void
+     */
+    public function before();
+
+    /**
+     * Code to execute after running the application.
+     * @return void
+     */
+    public function after();
+
+    /**
+     * Terminate application.
+     *
+     * @return void
+     */
+    public function terminate();
 }
