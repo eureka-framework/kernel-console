@@ -16,6 +16,6 @@ use Eureka\Eurekon\Console;
  *
  * @author Romain Cottard
  */
-class Application extends Console
+class Application extends Console implements ApplicationInterface
 {
 }
