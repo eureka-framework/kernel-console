@@ -1,0 +1,15 @@
+# Services Yaml file
+parameters:
+
+    app.name: 'kernel'
+
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+        bind:
+            $applicationName: '%app.name%'
+            $logger: '@Psr\Log\NullLogger'

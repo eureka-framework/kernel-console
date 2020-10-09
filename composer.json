@@ -2,6 +2,7 @@
   "name": "eureka/kernel-console",
   "description": "Kernel for Eureka Framework. Define console application kernel versions",
   "type": "library",
+  "minimum-stability": "stable",
   "license": "MIT",
 
   "authors": [
@@ -16,14 +17,31 @@
       "Eureka\\Kernel\\Console\\": "./src"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Eureka\\Kernel\\Http\\Tests\\": "./tests"
+    }
+  },
+
+  "config": {
+    "sort-packages": true
+  },
 
   "require": {
-    "eureka/Eurekon": "^3.2",
+    "php": ">=7.4",
+    "eureka/eurekon": "^3.2",
 
-    "symfony/config": "^4.1",
-    "symfony/dependency-injection": "^4.1",
-    "symfony/finder": "^4.1",
-    "symfony/yaml": "^4.1"
+    "symfony/config": "^5.1",
+    "symfony/dependency-injection": "^5.1",
+    "symfony/finder": "^5.1",
+    "symfony/yaml": "^5.1"
+  },
+
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^v0.6",
+    "phpcompatibility/php-compatibility": "^9.3",
+    "phpunit/phpcov": "^8.2.0",
+    "phpunit/phpunit": "^9.4.0",
+    "squizlabs/php_codesniffer": "^3.5"
   }
-
 }
