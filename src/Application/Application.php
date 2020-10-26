@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Eureka\Kernel\Console\Application;
 
-use Eureka\Eurekon\Console;
+use Eureka\Component\Console\Console;
 
 /**
  * Application class
