@@ -29,7 +29,7 @@
 
   "require": {
     "php": ">=7.4",
-    "eureka/eurekon": "^3.2",
+    "eureka/component-console": "@dev",
 
     "symfony/config": "^5.1",
     "symfony/dependency-injection": "^5.1",
