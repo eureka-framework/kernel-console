@@ -29,7 +29,7 @@
 
   "require": {
     "php": ">=7.4",
-    "eureka/component-console": "@dev",
+    "eureka/component-console": "^5.0",
 
     "symfony/config": "^5.1",
     "symfony/dependency-injection": "^5.1",
@@ -38,7 +38,7 @@
   },
 
   "require-dev": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^v0.6",
+    "dealerdirect/phpcodesniffer-composer-installer": "^v0.7",
     "phpcompatibility/php-compatibility": "^9.3",
     "phpunit/phpcov": "^8.2.0",
     "phpunit/phpunit": "^9.4.0",
