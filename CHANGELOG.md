@@ -10,33 +10,44 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed:
  * Require php 7.4+
  * Improve code & testability
+ * Update kernel
  * Upgrade phpcodesniffer to v0.7 for composer 2.0
+ * Now require eureka/component-console (v5.0+)
 ### Added
  * Tests
  * Configs for tests
- * New exceptions
- * New helpers: Session, DataCollection & IpResolver
- * New RateLimiter middleware
-### Removed
- * Old exceptions
- * Old unused error handler
- * Old middleware exceptions
 
 
 
-## [3.0.0] - 2018
-### Added
- * Use official PSR-15
- * New default ErrorController
- * Use original PSR-15 middleware
- * Now use Symfony/DepencencyInjection, Symfony/Config & Symfony/Routing
+## [4.0] - No Release
 
-### Changed
+
+
+## [3.0] - No Release
+
+
+
+## [2.0+] - 2019
+### Changed  
  * Require php 7.2+
- * Complete refactoring
- * Lots of changes
- * More SOLID code
+ * Update kernel
+ * Update interface
+ * Now based on Eurekon 3.0
  * Re-order config loading
+ * Upgrade to Eurekon 3.2+
+### Added
+ * Allow sub directories in config/packages/
+
+
  
-### Removed
- * Remove useless Static Middlewares & ApplicationStatic classes
+## [1.0+] - 2018
+### Added
+ * Add kernel console
+ * Add application
+ * Add interface
+ * Add dependency to Eurekon 2.0+
+ * Support namespace from packages
+### Changed
+ * Change loading cache methods
+ * Change loading service container
+ 
