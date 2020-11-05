@@ -146,8 +146,8 @@ class Kernel
         $loader->load($this->getConfigDir() . '/{packages}/**/*' . self::CONFIG_EXTENSIONS, 'glob');
 
         //~ Load specific env config files
-        $loader->load($this->getConfigDir() . '/' . $this->environment . '/*' . self::CONFIG_EXTENSIONS, 'glob');
-        $loader->load($this->getConfigDir() . '/' . $this->environment . '/**/*' . self::CONFIG_EXTENSIONS, 'glob');
+        $loader->load($this->getConfigDir() . '/{' . $this->environment . '}/*' . self::CONFIG_EXTENSIONS, 'glob');
+        $loader->load($this->getConfigDir() . '/{' . $this->environment . '}/**/*' . self::CONFIG_EXTENSIONS, 'glob');
 
         //~ Load services config files
         $loader->load($this->getConfigDir() . '/{services}' . self::CONFIG_EXTENSIONS, 'glob');
