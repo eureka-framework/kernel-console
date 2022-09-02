@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [5.1.0] - 2022-09-02
+### Changed
+* CI improvements (php compatibility check, makefile, jenkins)
+* Now compatible with PHP 7.4, 8.0 & 8.1
+* Fix phpdoc according to phpstan analysis
+### Added
+* phpstan for static analysis
+### Removed
+* phpcompatibility (no more maintained)
+
 ## [5.0.1] - 2020-11-05
 ### Changed:
  * Better loading for yaml file (now search for sub directory /{env}/ & /secrets/)
@@ -53,4 +63,3 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
  * Change loading cache methods
  * Change loading service container
- 

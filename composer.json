@@ -19,29 +19,32 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Eureka\\Kernel\\Http\\Tests\\": "./tests"
+      "Eureka\\Kernel\\Console\\Tests\\": "./tests"
     }
   },
 
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   },
 
   "require": {
-    "php": ">=7.4",
-    "eureka/component-console": "^5.0",
+    "php": "7.4.*|8.0.*|8.1.*",
+    "eureka/component-console": "^5.1",
 
-    "symfony/config": "^5.1",
-    "symfony/dependency-injection": "^5.1",
-    "symfony/finder": "^5.1",
-    "symfony/yaml": "^5.1"
+    "symfony/config": "^5.4",
+    "symfony/dependency-injection": "^5.4",
+    "symfony/finder": "^5.4",
+    "symfony/yaml": "^5.4"
   },
 
   "require-dev": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^v0.7",
-    "phpcompatibility/php-compatibility": "^9.3",
-    "phpunit/phpcov": "^8.2.0",
-    "phpunit/phpunit": "^9.4.0",
-    "squizlabs/php_codesniffer": "^3.5"
+    "phpunit/phpcov": "^8.2",
+    "phpunit/phpunit": "^9.5",
+    "phpstan/phpstan": "^1.8",
+    "squizlabs/php_codesniffer": "^3.5",
+    "symfony/cache": "^v5.4"
   }
 }
