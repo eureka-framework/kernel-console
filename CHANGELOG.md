@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [5.2.0] - 2023-06-14
+### Changed
+- Now compatible PHP 8.2
+- Update composer.json
+- Fix phpstan error in Kernel
+- Add PHP 8.2 compatibility check
+
 ## [5.1.0] - 2022-09-02
 ### Changed
 * CI improvements (php compatibility check, makefile, jenkins)
