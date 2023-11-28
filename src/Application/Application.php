@@ -18,6 +18,4 @@ use Eureka\Component\Console\Console;
  *
  * @author Romain Cottard
  */
-class Application extends Console implements ApplicationInterface
-{
-}
+class Application extends Console implements ApplicationInterface {}
