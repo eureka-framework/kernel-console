@@ -4,6 +4,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+**TEMPLATE:**
+```
+## [x.y.z] - yyyy-mm[-dd]
+[x.y.z]: https://github.com/eureka-framework/kernel-http/compare/6.0.0...master
+### Added
+### Changed
+### Removed
+```
+
+## [6.0.0] - 2023-11-28
+[6.0.0]: https://github.com/eureka-framework/kernel-http/compare/6.0.0...master
+### Added
+- Add PHP 8.3 compatibility
+- Add PHP CS fixer
+### Changed
+- Update Makefile
+- Update version
+- Update composer.json
+### Removed
+- Drop support of PHP 7.4 & 8.0
+- Drop PHPCS support
+
+---
+
+## [5.3.0] - 2023-06-14
+[5.3.0]: https://github.com/eureka-framework/kernel-http/compare/5.2.1...5.3.0
+### Changed
+- Now officially compatible with PHP 8.2
+- Update composer.json
+- Update Makefile
+- Update GitHub workflow
+- Fix some phpstan errors
+### Added
+- PHPStan config for PHP 8.2 compatibility check
+
+## [5.2.1] - 2022-09-02
+### Changed
+- Update DataCollection array content (to mixed)
 
 ## [5.2.0] - 2023-06-14
 ### Changed

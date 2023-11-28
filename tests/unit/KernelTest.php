@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Eureka\Kernel\Console\Tests;
+namespace Eureka\Kernel\Console\Tests\Unit;
 
 use Eureka\Kernel\Console\Kernel;
 use PHPUnit\Framework\TestCase;
@@ -28,7 +28,7 @@ class KernelTest extends TestCase
      */
     public function testCanInstantiateKernel(): void
     {
-        $root  = (string) realpath(__DIR__ . '/..');
+        $root  = (string) realpath(__DIR__ . '/../../');
         $env   = 'dev';
         $debug = true;
 
@@ -43,7 +43,7 @@ class KernelTest extends TestCase
      */
     public function testCanGetContainer(): void
     {
-        $root  = (string) realpath(__DIR__ . '/..');
+        $root  = (string) realpath(__DIR__ . '/../../');
         $env   = 'dev';
         $debug = true;
 
