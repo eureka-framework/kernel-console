@@ -231,7 +231,7 @@ class Kernel
                 new GlobFileLoader($container, $locator),
                 new DirectoryLoader($container, $locator),
                 new ClosureLoader($container),
-            ]
+            ],
         );
 
         return new DelegatingLoader($resolver);

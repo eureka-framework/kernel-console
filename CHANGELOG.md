@@ -13,8 +13,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 ```
 
+## [6.1.0] - 2024-09-26
+[6.1.0]: https://github.com/eureka-framework/kernel-http/compare/6.0.0...6.1.0
+### Changed
+- Allow symfony 7.0+ in dependencies
+
+---
 ## [6.0.0] - 2023-11-28
-[6.0.0]: https://github.com/eureka-framework/kernel-http/compare/6.0.0...master
+[6.0.0]: https://github.com/eureka-framework/kernel-http/compare/5.3.0...6.0.0
 ### Added
 - Add PHP 8.3 compatibility
 - Add PHP CS fixer
