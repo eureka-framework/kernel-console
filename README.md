@@ -34,6 +34,7 @@ composer require eureka-framework/kernek-console
 
 use Eureka\Kernel\Console\Application\Application;
 use Eureka\Kernel\Console\Kernel;
+use Lcobucci\Clock\SystemClock;
 use Psr\Container\NotFoundExceptionInterface;
 
 //~ Define Loader & add main classes for config
@@ -47,13 +48,8 @@ try {
 
     $kernel = new Kernel($root, $env, $debug);
 
-    $console = (new Application($argv, $kernel->getContainer()))
-        ->setBaseNamespaces([
-            'Application\Script',
-            'Eureka\Component\Deployer\Script',
-            'Eureka\Component',
-        ])
-        //->setLogger()
+    $console = (new Application(SystemClock::fromUTC(), $argv, container: $kernel->getContainer()))
+        ->setBaseNamespaces(['Application\Script', 'Eureka\Component'])
     ;
 
     $console->before();
@@ -61,10 +57,7 @@ try {
     $console->after();
     $console->terminate();
 
-} catch (NotFoundExceptionInterface $exception) {
-    echo 'Exception: ' . $exception->getMessage() . PHP_EOL;
-    exit(1);
-} catch (\Exception $exception) {
+} catch (\Throwable $exception) {
     echo 'Exception: ' . $exception->getMessage() . PHP_EOL;
     exit(1);
 }
