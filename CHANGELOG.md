@@ -13,6 +13,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 ```
 
+## [7.0.0] - 2026-01-05
+[7.0.0]: https://github.com/eureka-framework/kernel-http/compare/6.1.0...7.0.0
+### Added
+- Add PHP 8.3+ support
+- Add Symfony 8+ support
+### Removed
+- Drop PHP 8.1 & 8.2 support
+- Drop Symfony 5 support
+### Changed
+- Allow Symfony 7.0+ in dependencies
+- Update dependencies
+- Update CI configs
+- Update Makefile
+
+---
 ## [6.1.0] - 2024-09-26
 [6.1.0]: https://github.com/eureka-framework/kernel-http/compare/6.0.0...6.1.0
 ### Changed
