@@ -34,7 +34,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  */
 class Kernel
 {
-    private const CONFIG_EXTENSIONS = '.{php,xml,yaml,yml}';
+    private const string CONFIG_EXTENSIONS = '.{php,yaml,yml}';
 
     private ContainerInterface $container;
     private ContainerBuilder $containerBuilder;
@@ -106,8 +106,8 @@ class Kernel
      */
     protected function initErrorReporting(int $reporting, string $display): self
     {
-        error_reporting($reporting);
-        ini_set('display_errors', $display);
+        \error_reporting($reporting);
+        \ini_set('display_errors', $display);
 
         return $this;
     }
@@ -121,14 +121,14 @@ class Kernel
     {
         //~ Override reporting value from config
         $reporting  = $this->container->getParameter('kernel.error.reporting');
-        $errorLevel = (int) (!is_scalar($reporting) ? error_reporting(0) : $reporting);
+        $errorLevel = (int) (!\is_scalar($reporting) ? \error_reporting(0) : $reporting);
 
         //~ Override display value from config
         $display      = $this->container->getParameter('kernel.error.display');
-        $errorDisplay = (string) (!is_scalar($display) ? ini_get('display_errors') : $display);
+        $errorDisplay = (string) (!\is_scalar($display) ? \ini_get('display_errors') : $display);
 
-        error_reporting($errorLevel);
-        ini_set('display_errors', $errorDisplay);
+        \error_reporting($errorLevel);
+        \ini_set('display_errors', $errorDisplay);
 
         return $this;
     }
@@ -144,7 +144,6 @@ class Kernel
 
         //~ Load kernel config files
         $loader->load($this->getConfigDir() . '/{kernel}' . self::CONFIG_EXTENSIONS, 'glob');
-        $loader->load($this->getConfigDir() . '/{kernel}_' . $this->environment . self::CONFIG_EXTENSIONS, 'glob'); // @deprecated
 
         $this->containerBuilder->setParameter('kernel.environment', $this->environment);
         $this->containerBuilder->setParameter('kernel.directory.root', $this->rootDirectory);
@@ -153,15 +152,14 @@ class Kernel
         $loader->load($this->getConfigDir() . '/{packages}/*' . self::CONFIG_EXTENSIONS, 'glob');
         $loader->load($this->getConfigDir() . '/{packages}/**/*' . self::CONFIG_EXTENSIONS, 'glob');
 
-        //~ Load specific env config files
+        //~ Load services config files
+        $loader->load($this->getConfigDir() . '/{services}' . self::CONFIG_EXTENSIONS, 'glob');
+
+        //~ Load specific env config files that can override base config
         $loader->load($this->getConfigDir() . '/{' . $this->environment . '}/*' . self::CONFIG_EXTENSIONS, 'glob');
         $loader->load($this->getConfigDir() . '/{' . $this->environment . '}/**/*' . self::CONFIG_EXTENSIONS, 'glob');
 
-        //~ Load services config files
-        $loader->load($this->getConfigDir() . '/{services}' . self::CONFIG_EXTENSIONS, 'glob');
-        $loader->load($this->getConfigDir() . '/{services}_' . $this->environment . self::CONFIG_EXTENSIONS, 'glob'); // @deprecated
-
-        //~ Load secrets config files
+        //~ Load secrets config files that can override base & env configs
         $loader->load($this->getConfigDir() . '/{secrets}/*' . self::CONFIG_EXTENSIONS, 'glob');
         $loader->load($this->getConfigDir() . '/{secrets}/**/*' . self::CONFIG_EXTENSIONS, 'glob');
 
@@ -224,7 +222,6 @@ class Kernel
 
         $resolver = new LoaderResolver(
             [
-                new XmlFileLoader($container, $locator),
                 new YamlFileLoader($container, $locator),
                 new IniFileLoader($container, $locator),
                 new PhpFileLoader($container, $locator),

@@ -9,5 +9,5 @@ return $config
     ->addPathToScan(__DIR__ . '/../src', isDev: false)
     ->addPathToScan(__DIR__ . '/../tests', isDev: true)
 
-    ->ignoreErrorsOnPackage('symfony/yaml',  [ErrorType::UNUSED_DEPENDENCY]) // required in dependencies of symfony/dependency-injection
+    ->ignoreErrorsOnPackages(['symfony/finder', 'symfony/yaml'],  [ErrorType::UNUSED_DEPENDENCY]) // required in dependencies of symfony/dependency-injection
 ;
