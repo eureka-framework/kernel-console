@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 ```
 
+## [7.0.1] - 2026-09-04
+[7.0.1]: https://github.com/eureka-framework/kernel-http/compare/7.0.0...7.0.1
+### Added
+- Allow `symfony/finder` ^8.0
+
 ## [7.0.0] - 2026-01-05
 [7.0.0]: https://github.com/eureka-framework/kernel-http/compare/6.1.0...7.0.0
 ### Added
